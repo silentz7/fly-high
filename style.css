@@ -18,7 +18,7 @@ body {
 .bg {
   position: fixed;
   inset: 0;
-  background: url("Assets/images/homebg.png") no-repeat center center/cover;
+  background: url("/Assets/images/homebg.png") no-repeat center center/cover;
   filter: brightness(0.9);
   z-index: -1;
   animation: zoom 20s ease-in-out infinite alternate;
@@ -93,4 +93,5 @@ body {
     padding: 15px 0;
   }
 }
+
 
