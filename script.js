@@ -29,6 +29,7 @@ chooseBtn.addEventListener('click', () => {
   playClick();
   setTimeout(() => {
     homeBgm.pause();
-    window.location.href = 'iconpage/ip.html';
+    window.location.href = 'Iconpage/ip.html';
   }, 150);
 });
+
