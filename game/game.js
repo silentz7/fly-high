@@ -71,7 +71,7 @@ for (let i = 0; i < 20; i++) {
   poleX += 400;
 }
 
-greenLine.x = poles[poles.length - 1].x + 150;
+greenLine.x = poles[poles.length - 1].x + poles[poles.length - 1].width + 50;
 
 // ✅ BGM will start only after first jump
 let bgmStarted = false;
@@ -224,6 +224,7 @@ if (!gameWin && bird.x + bird.width >= greenLine.x) {
 }
 
 update();
+
 
 
 
