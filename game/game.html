@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flappy Boys - Game</title>
+  <link rel="stylesheet" href="../game/game.css" />
+</head>
+<body>
+  <audio id="bgm" src="../Assets/audio/bgm.mp3" loop></audio>
+  <audio id="effect" src="../Assets/audio/effect.mp3"></audio>
+  <audio id="loseSound" src="../Assets/audio/lose.mp3"></audio>
+  <audio id="winSound" src="../Assets/audio/win.mp3"></audio>
+
+  <div class="popup hidden" id="popup">
+    <img id="popupImage" src="../Assets/images/lose.png" alt="Result" />
+    <p id="popupText">Tumse naa ho payega</p>
+    <div class="popup-buttons">
+      <button id="restartBtn">Restart</button>
+      <button id="homeBtn">Home</button>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+  <div class="score">Score: <span id="scoreValue">0</span></div>
+
+  <script src="../game/game.js"></script>
+</body>
+</html>

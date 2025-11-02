@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Your Bird</title>
+  <link rel="stylesheet" href="ip.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <main class="container">
+    <h1 class="title">Choose Your Bird</h1>
+
+    <div class="bird-grid" id="birdGrid">
+      <!-- Birds will load dynamically -->
+    </div>
+
+    <div class="buttons">
+      <button class="btn alt" id="homeBtn">Home</button>
+      <button class="btn" id="startBtn">Start Game</button>
+    </div>
+  </main>
+
+  <audio id="ipBgm" src="../assets/audio/bgm.mp3" autoplay loop preload="auto"></audio>
+  <audio id="clickSfx" src="../assets/audio/effect.mp3" preload="auto"></audio>
+
+  <script src="ip.js"></script>
+</body>
+</html>

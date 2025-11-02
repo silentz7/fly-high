@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  position: relative;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url("../assets/images/ipbackground.png") no-repeat center center/cover;
+  background-attachment: fixed;
+  z-index: -1;
+  filter: brightness(0.9);
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 2.5rem 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.4rem;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
+  margin-top: 1rem;
+}
+
+.bird-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.bird {
+  width: 200px;
+  height: 230px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.bird img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.bird-name {
+  margin-top: 8px;
+  font-size: 1.05rem;
+  color: #fff;
+  text-shadow: 0 0 4px rgba(0,0,0,0.8);
+}
+
+.bird:active {
+  transform: scale(0.93);
+}
+
+.bird.selected {
+  border-color: #ffd54a;
+  box-shadow: 0 0 20px rgba(255, 213, 74, 0.9);
+  transform: scale(1.06);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  margin-top: 2.5rem;
+}
+
+.btn {
+  width: 160px;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.93);
+  box-shadow: 0 0 15px rgba(255,255,255,0.7);
+}
+
+.btn.alt {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+  .bird {
+    width: 170px;
+    height: 200px;
+  }
+  .bird img {
+    width: 140px;
+    height: 140px;
+  }
+  .bird-name {
+    font-size: 0.95rem;
+  }
+  .btn {
+    width: 140px;
+    padding: 12px 0;
+  }
+}

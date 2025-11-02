@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+  background: url("../Assets/images/background.png") no-repeat center center/cover;
+  height: 100vh;
+  width: 100vw;
+  touch-action: none;
+  user-select: none;
+  font-family: "Poppins", sans-serif;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+}
+.score {
+  position: absolute;
+  top: 20px;
+  left: 25px;  /* Center se Left */
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  transform: none;
+}
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.popup img {
+  width: 200px;
+  margin-bottom: 15px;
+}
+.popup p {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px black;
+}
+.popup-buttons {
+  display: flex;
+  gap: 20px;
+}
+.popup button {
+  background: linear-gradient(135deg, #00c853, #64dd17);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.popup button:hover {
+  transform: scale(1.05);
+}
+.hidden {
+  display: none;
+}
