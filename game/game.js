@@ -53,9 +53,9 @@ let gameWin = false;
 let poleX = canvas.width + 200;
 for (let i = 0; i < 20; i++) {
   let gap;
-  if (i < 10) gap = 250;
-  else if (i < 15) gap = 250;
-  else gap = 220;
+  if (i < 10) gap = 240;
+  else if (i < 15) gap = 240;
+  else gap = 210;
 
   let offsetY = Math.random() * 150 - 75;
   let topHeight = canvas.height / 2 - gap / 2 + offsetY;
@@ -192,7 +192,7 @@ function update() {
   poles.forEach(p => {
     let speed = 4.5;
     if (score > 10) speed = 4.0;
-    if (score > 15) speed = 4.5;
+    if (score > 15) speed = 3.8;
     p.x -= speed;
 
     if (
@@ -221,3 +221,4 @@ function update() {
 }
 
 update();
+
