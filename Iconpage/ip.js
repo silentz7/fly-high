@@ -38,7 +38,7 @@ for (let i = 1; i <= totalBirds; i++) {
 
   // image
   const img = document.createElement('img');
-  img.src = `../assets/images/birds/bird${i}.png`;
+  img.src = `../Assets/images/birds/bird${i}.png`;
   img.alt = `Bird ${i}`;
 
   // name label
@@ -82,3 +82,4 @@ startBtn.addEventListener('click', () => {
     window.location.href = '../game/game.html';
   }, 120);
 });
+
