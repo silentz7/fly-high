@@ -71,7 +71,7 @@ for (let i = 0; i < 20; i++) {
   poleX += 400;
 }
 
-greenLine.x = poles[poles.length - 1].x + 50;
+greenLine.x = poles[poles.length - 1].x + 400;
 
 // ✅ BGM will start only after first jump
 let bgmStarted = false;
@@ -227,3 +227,4 @@ function update() {
 }
 
 update();
+
