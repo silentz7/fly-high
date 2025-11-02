@@ -71,7 +71,7 @@ for (let i = 0; i < 20; i++) {
   poleX += 400;
 }
 
-greenLine.x = poles[poles.length - 1].x + 180;
+greenLine.x = poles[poles.length - 1].x + 150;
 
 // ✅ BGM will start only after first jump
 let bgmStarted = false;
@@ -153,7 +153,7 @@ function resetGame() {
     poleX += 400;
   }
 
-  greenLine.x = poles[poles.length - 1].x + 180;
+  greenLine.x = poles[poles.length - 1].x + 150;
   popup.classList.add("hidden");
   loseSound.pause();
   winSound.pause();
@@ -212,7 +212,7 @@ function update() {
   });
 
   // Move the win line at same speed as poles
-greenLine.x -= 4;
+greenLine.x -= speed;
 
 // Trigger win when bird touches the line, ignore score mismatch
 if (!gameWin && bird.x + bird.width >= greenLine.x) {
@@ -224,6 +224,7 @@ if (!gameWin && bird.x + bird.width >= greenLine.x) {
 }
 
 update();
+
 
 
 
