@@ -138,7 +138,7 @@ function resetGame() {
   poleX = canvas.width + 200;
 
   for (let i = 0; i < 20; i++) {
-    let gap = i < 10 ? 350 : i < 15 ? 300 : 200;
+    let gap = i < 10 ? 240 : i < 15 ? 240 : 220;
     let offsetY = Math.random() * 150 - 75;
     let topHeight = canvas.height / 2 - gap / 2 + offsetY;
     let bottomY = canvas.height / 2 + gap / 2 + offsetY;
@@ -227,5 +227,6 @@ function update() {
 }
 
 update();
+
 
 
