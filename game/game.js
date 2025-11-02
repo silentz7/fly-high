@@ -211,14 +211,18 @@ function update() {
     }
   });
 
-  greenLine.x -= 2.5;
-  if (bird.x + bird.width > greenLine.x && !gameWin && score >= 20) {
-    gameWin = true;
-    showPopup(true);
-  }
+  // Move the win line at same speed as poles
+greenLine.x -= 4;
+
+// Trigger win when bird touches the line, ignore score mismatch
+if (!gameWin && bird.x + bird.width >= greenLine.x) {
+  gameWin = true;
+  showPopup(true);
+}
 
   requestAnimationFrame(update);
 }
 
 update();
+
 
