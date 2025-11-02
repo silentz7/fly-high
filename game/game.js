@@ -153,7 +153,7 @@ function resetGame() {
     poleX += 400;
   }
 
-  greenLine.x = poles[poles.length - 1].x + 150;
+  greenLine.x = poles[poles.length - 1].x + 50;
   popup.classList.add("hidden");
   loseSound.pause();
   winSound.pause();
@@ -224,6 +224,7 @@ if (!gameWin && bird.x + bird.width >= greenLine.x) {
 }
 
 update();
+
 
 
 
