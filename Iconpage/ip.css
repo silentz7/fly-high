@@ -20,7 +20,7 @@ body {
 .bg {
   position: fixed;
   inset: 0;
-  background: url("../assets/images/ipbackground.png") no-repeat center center/cover;
+  background: url("../Assets/images/ipbackground.png") no-repeat center center/cover;
   background-attachment: fixed;
   z-index: -1;
   filter: brightness(0.9);
@@ -138,3 +138,4 @@ body {
     padding: 12px 0;
   }
 }
+
