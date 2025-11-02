@@ -49,29 +49,35 @@ let score = 0;
 let gameOver = false;
 let gameWin = false;
 
-// Generate poles
-let poleX = canvas.width + 200;
-for (let i = 0; i < 20; i++) {
-  let gap;
-  if (i < 10) gap = 240;
-  else if (i < 15) gap = 240;
-  else gap = 210;
+// Generate poles (same pattern always)
+function generatePoles() {
+  poles = [];
+  let poleX = canvas.width + 200;
 
-  let offsetY = Math.random() * 150 - 75;
-  let topHeight = canvas.height / 2 - gap / 2 + offsetY;
-  let bottomY = canvas.height / 2 + gap / 2 + offsetY;
+  for (let i = 0; i < 20; i++) {
+    let gap;
+    if (i < 10) gap = 240;
+    else if (i < 15) gap = 240;
+    else gap = 210;
 
-  poles.push({
-    x: poleX,
-    width: 80,
-    topHeight: topHeight,
-    bottomY: bottomY,
-    passed: false,
-  });
-  poleX += 400;
+    let offsetY = Math.random() * 150 - 75;
+    let topHeight = canvas.height / 2 - gap / 2 + offsetY;
+    let bottomY = canvas.height / 2 + gap / 2 + offsetY;
+
+    poles.push({
+      x: poleX,
+      width: 80,
+      topHeight: topHeight,
+      bottomY: bottomY,
+      passed: false,
+    });
+    poleX += 400;
+  }
+
+  // ✅ green line one full gap (400) after last pole
+  greenLine.x = poles[poles.length - 1].x + 400;
 }
-
-greenLine.x = poles[poles.length - 1].x + 400;
+generatePoles();
 
 // ✅ BGM will start only after first jump
 let bgmStarted = false;
@@ -80,7 +86,6 @@ let bgmStarted = false;
 window.addEventListener("touchstart", () => {
   if (gameOver || gameWin) return;
 
-  // Start bgm after first interaction
   if (!bgmStarted) {
     bgm.currentTime = 0;
     bgm.loop = true;
@@ -88,7 +93,6 @@ window.addEventListener("touchstart", () => {
     bgmStarted = true;
   }
 
-  // Stop overlapping effect
   if (!effect.paused) {
     effect.pause();
     effect.currentTime = 0;
@@ -127,38 +131,19 @@ function showPopup(win) {
 }
 
 function resetGame() {
-  // Instead of full reload, we reset all vars
   gameOver = false;
   gameWin = false;
   score = 0;
   scoreValue.textContent = 0;
   bird.y = canvas.height / 2;
   bird.velocity = 0;
-  poles = [];
-  poleX = canvas.width + 200;
 
-  for (let i = 0; i < 20; i++) {
-    let gap = i < 10 ? 240 : i < 15 ? 240 : 220;
-    let offsetY = Math.random() * 150 - 75;
-    let topHeight = canvas.height / 2 - gap / 2 + offsetY;
-    let bottomY = canvas.height / 2 + gap / 2 + offsetY;
+  // ✅ recreate exact same pattern
+  generatePoles();
 
-    poles.push({
-      x: poleX,
-      width: 80,
-      topHeight: topHeight,
-      bottomY: bottomY,
-      passed: false,
-    });
-    poleX += 400;
-  }
-
-  greenLine.x = poles[poles.length - 1].x + 400;
   popup.classList.add("hidden");
   loseSound.pause();
   winSound.pause();
-
-  // 🟢 Force bgm to wait for first jump again
   bgm.pause();
   bgmStarted = false;
 
@@ -211,13 +196,11 @@ function update() {
     }
   });
 
-  // ✅ Fixed: Move green line using proper speed variable
   let lineSpeed = 4.5;
   if (score > 10) lineSpeed = 4.0;
   if (score > 15) lineSpeed = 3.8;
   greenLine.x -= lineSpeed;
 
-  // ✅ Trigger win cleanly
   if (!gameWin && bird.x + bird.width >= greenLine.x) {
     gameWin = true;
     showPopup(true);
@@ -227,6 +210,3 @@ function update() {
 }
 
 update();
-
-
-
