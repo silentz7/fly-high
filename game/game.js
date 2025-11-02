@@ -153,7 +153,7 @@ function resetGame() {
     poleX += 400;
   }
 
-  greenLine.x = poles[poles.length - 1].x + 50;
+  greenLine.x = poles[poles.length - 1].x + 400;
   popup.classList.add("hidden");
   loseSound.pause();
   winSound.pause();
@@ -227,4 +227,5 @@ function update() {
 }
 
 update();
+
 
