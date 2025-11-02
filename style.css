@@ -17,12 +17,17 @@ body {
 /* Background */
 .bg {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: url("Assets/images/homebg.png") no-repeat center center/cover;
+  background-attachment: fixed;
   filter: brightness(0.9);
   z-index: -1;
   animation: zoom 20s ease-in-out infinite alternate;
 }
+
 
 @keyframes zoom {
   from { transform: scale(1); }
@@ -93,6 +98,7 @@ body {
     padding: 15px 0;
   }
 }
+
 
 
 
