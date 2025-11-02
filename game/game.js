@@ -211,24 +211,19 @@ function update() {
     }
   });
 
-  // Move the win line at same speed as poles
-greenLine.x -= speed;
+  // ✅ Fixed: Move green line using proper speed variable
+  let lineSpeed = 4.5;
+  if (score > 10) lineSpeed = 4.0;
+  if (score > 15) lineSpeed = 3.8;
+  greenLine.x -= lineSpeed;
 
-// Trigger win when bird touches the line, ignore score mismatch
-if (!gameWin && bird.x + bird.width >= greenLine.x) {
-  gameWin = true;
-  showPopup(true);
-}
+  // ✅ Trigger win cleanly
+  if (!gameWin && bird.x + bird.width >= greenLine.x) {
+    gameWin = true;
+    showPopup(true);
+  }
 
   requestAnimationFrame(update);
 }
 
 update();
-
-
-
-
-
-
-
-
