@@ -117,6 +117,21 @@ body {
   to { transform: scale(1); opacity: 1; }
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px; /* title se gap */
+  animation: pop 1s ease;
+}
+
+.logo img {
+  width: 130px; /* size adjust kar le */
+  height: auto;
+  border-radius: 15px;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));
+}
+
 
 
 
